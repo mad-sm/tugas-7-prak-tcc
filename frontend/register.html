@@ -34,7 +34,7 @@
             console.log(data);
 
             try {
-                const response = await axios.post('http://localhost:5000/register', data);
+                const response = await axios.post('https://be-trigger-shidiq-86067911510.us-central1.run.app/register', data);
                 alert(response.data);
                 window.location.href = 'http://localhost:8080/TCC_Shidiq_073/frontend/login.html';
             } catch (error) {
