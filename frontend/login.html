@@ -29,7 +29,7 @@
             const password = document.getElementById('password').value;
 
             try {
-                const response = await axios.post('http://localhost:5000/login', { username, password });
+                const response = await axios.post('https://be-trigger-shidiq-86067911510.us-central1.run.app/login', { username, password });
                 localStorage.setItem('token', response.data.accessToken);
                 alert(response.data.message);
                 window.location.href = 'http://localhost:8080/TCC_Shidiq_073/frontend/index.html';
