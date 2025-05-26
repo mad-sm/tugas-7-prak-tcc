@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const token = getToken();
         if (!token) {
             alert("Anda harus login terlebih dahulu.");
-            window.location.href = "http://localhost:8080/TCC_Shidiq_073/frontend/login.html"; 
+            window.location.href = "https://fe-shidiq-dot-pemuda-tobat.uc.r.appspot.com/login.html"; 
             return;
         }
 
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (error) {
         console.error("Error fetching logged-in user:", error);
         alert("Gagal memuat data pengguna. Silakan login kembali.");
-        window.location.href = "http://localhost:8080/TCC_Shidiq_073/frontend/login.html"; 
+        window.location.href = "https://fe-shidiq-dot-pemuda-tobat.uc.r.appspot.com/login.html"; 
     }
 });
 
@@ -43,7 +43,7 @@ document.getElementById("logout").addEventListener("click", async () => {
         });
         localStorage.removeItem('token');
         alert("Anda telah berhasil logout.");
-        window.location.href = "http://localhost:8080/TCC_Shidiq_073/frontend/login.html";
+        window.location.href = "https://fe-shidiq-dot-pemuda-tobat.uc.r.appspot.com/login.html";
     } catch (error) {
         console.error("Error during logout:", error);
         alert("Gagal logout. Silakan coba lagi.");
