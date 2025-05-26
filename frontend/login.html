@@ -19,7 +19,7 @@
         <button type="submit">Login</button>
     </form>
     <div class="account-link">
-        <p>Don't have an account? <a href="http://localhost:8080/TCC_Shidiq_073/frontend/register.html">Register here</a></p>
+        <p>Don't have an account? <a href="https://fe-shidiq-dot-pemuda-tobat.uc.r.appspot.com/register.html">Register here</a></p>
     </div>
     <script>
         const form = document.querySelector('form');
@@ -32,7 +32,7 @@
                 const response = await axios.post('https://be-trigger-shidiq-86067911510.us-central1.run.app/login', { username, password });
                 localStorage.setItem('token', response.data.accessToken);
                 alert(response.data.message);
-                window.location.href = 'http://localhost:8080/TCC_Shidiq_073/frontend/index.html';
+                window.location.href = 'https://fe-shidiq-dot-pemuda-tobat.uc.r.appspot.com/index.html';
             } catch (error) {
                 alert(error.response?.data?.message || 'Login failed');
             }
