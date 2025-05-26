@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h2>Login</h2>
+    <form action="/login" method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        
+        <button type="submit">Login</button>
+    </form>
+    <div class="account-link">
+        <p>Don't have an account? <a href="http://localhost:8080/TCC_Shidiq_073/frontend/register.html">Register here</a></p>
+    </div>
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await axios.post('http://localhost:5000/login', { username, password });
+                localStorage.setItem('token', response.data.accessToken);
+                alert(response.data.message);
+                window.location.href = 'http://localhost:8080/TCC_Shidiq_073/frontend/index.html';
+            } catch (error) {
+                alert(error.response?.data?.message || 'Login failed');
+            }
+        });
+    </script>
+</body>
+</html>

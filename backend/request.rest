@@ -1,0 +1,12 @@
+GET http://localhost:5000/notes
+
+###
+DELETE  http://localhost:5000/delete-user/1
+###
+POST http://localhost:5000/tambahdata
+Content-Type: application/json
+{
+    "nama":"John Doe",
+    "judul":"Software Engineer",
+    "catatan":"This is a test note",
+}

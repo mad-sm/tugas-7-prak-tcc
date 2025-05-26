@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Aplikasi Notes</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="user-menu">
+        <div class="dropdown">
+            <span id="username">Halo, User</span>
+            <div class="dropdown-content">
+                <a id="logout">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <h2>Notes</h2>
+    <form id="form-notes">
+        <input type="hidden" id="note-id"> <!-- Input hidden untuk menyimpan ID -->
+        <label>Nama:</label>
+        <input type="text" id="nama" required>
+        <br>
+        <label>Judul:</label>
+        <input type="text" id="judul" required>
+        <br>
+        <label>Catatan:</label>
+        <textarea id="catatan" required></textarea>
+        <br>
+        <button type="submit">Simpan</button>
+    </form>
+    
+    <h3>Daftar Catatan</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Judul</th>
+                <th>Catatan</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="table-notes">
+        </tbody>
+    </table>
+    
+    <script src="indexfe.js"></script>
+</body>
+</html>
