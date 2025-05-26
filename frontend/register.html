@@ -22,7 +22,7 @@
         <button type="submit">Register</button>
     </form>
     <div class="account-link">
-        <p>Already have an account? <a href="http://localhost:8080/TCC_Shidiq_073/frontend/login.html">Login here</a></p>
+        <p>Already have an account? <a href="https://fe-shidiq-dot-pemuda-tobat.uc.r.appspot.com/login.html">Login here</a></p>
     </div>
     
     <script>
@@ -36,7 +36,7 @@
             try {
                 const response = await axios.post('https://be-trigger-shidiq-86067911510.us-central1.run.app/register', data);
                 alert(response.data);
-                window.location.href = 'http://localhost:8080/TCC_Shidiq_073/frontend/login.html';
+                window.location.href = 'https://fe-shidiq-dot-pemuda-tobat.uc.r.appspot.com/login.html';
             } catch (error) {
                 alert(error.response?.data?.message || 'Registration failed');
             }
