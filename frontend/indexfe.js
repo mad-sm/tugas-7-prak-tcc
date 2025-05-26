@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://be-trigger-shidiq-86067911510.us-central1.run.app";
 
 // Ambil elemen form
 const formulir = document.querySelector("form");
