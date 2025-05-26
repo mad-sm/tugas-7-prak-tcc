@@ -1,16 +1,12 @@
 steps:
-  # 1. Build Docker image untuk backend
   - name: "gcr.io/cloud-builders/docker"
     args: ["build", "-t", "gcr.io/$PROJECT_ID/be-trigger-shidiq", "."]
-    dir: "backend"
+    dir: 'backend'
 
-  # 2. Push ke Container Registry / Artifact Registry
   - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/$PROJECT_ID/be-trigger-shiidq"]
+    args: ["push", "gcr.io/$PROJECT_ID/be-trigger-shidiq"]
 
-  # 3. Deploy ke Cloud Run
   - name: "gcr.io/cloud-builders/gcloud"
-    entrypoint: gcloud
     args:
       [
         "run",
@@ -29,7 +25,5 @@ steps:
         "ACCESS_TOKEN_SECRET=${_ACCESS_TOKEN_SECRET},REFRESH_TOKEN_SECRET=${_REFRESH_TOKEN_SECRET},DB_HOST=${_DB_HOST},DB_NAME=${_DB_NAME},DB_PASSWORD=${_DB_PASSWORD},DB_USERNAME=${_DB_USERNAME}",
       ]
 
-# Log hanya akan disimpan di Google Cloud Logging
-# Log tidak akan disimpan di Google Cloud Storage (butuh hak akses).
 options:
   logging: CLOUD_LOGGING_ONLY
